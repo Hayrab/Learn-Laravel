@@ -2,6 +2,7 @@
 
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 
 /*
@@ -27,20 +28,9 @@ Route::get('/about', function () {
     ]);
 });
 
-Route::get('/blog', function () {
-    return view('blog', [
-        "title" => "blog",
-        "posts" => Post::all()
-    ]);
-});
+Route::get('/blog', [PostController::class, 'index']);
 
 // halaman single post
-Route::get('post/{slug}', function($slug){ //untuk menggambil apapun dari slashnya
+Route::get('post/{slug}', [PostController::class, 'show']); //untuk menggambil apapun dari slashnya
 
-
-    return view('post', [
-        "title" => "single post",
-        "post"  => Post::find($slug) // :: menandakan berjenis static
-    ]);
-});
 
