@@ -16,11 +16,11 @@ class PostController extends Controller
         ]);
     }
 
-    public function show($slug)
+    public function show(Post $post) //mengikat model post dari fitur post model binding
     {
         return view('post', [
             "title" => "single post",
-            "post"  => Post::find($slug) // :: menandakan berjenis static
+            "post"  => $post // tidak perlu mencari id, lansung saja post 
         ]);
     }
 }

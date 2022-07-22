@@ -31,6 +31,6 @@ Route::get('/about', function () {
 Route::get('/blog', [PostController::class, 'index']);
 
 // halaman single post
-Route::get('post/{slug}', [PostController::class, 'show']); //untuk menggambil apapun dari slashnya
+Route::get('post/{post:slug}', [PostController::class, 'show']); //untuk menggambil apapun dari slashnya
 
 
