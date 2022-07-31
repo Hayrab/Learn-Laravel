@@ -11,7 +11,7 @@ class Category extends Model
 
     protected $guarded = ['id'];
 
-    public function posts(){
+    public function Posts(){
         return $this->hasMany(post::class); //relasi antar table harus benar hasmany karena category mempunyai banyak post
     }
 }
