@@ -7,7 +7,7 @@
     @foreach ($posts as $post)
         <article class = "mb-5 border-bottom">
             <h2><a href="/post/{{ $post->slug }}" class="text-decoration-none"> {{ $post->title   }}</a> </h2>
-            <h5 class="text-decoration-none">BY : {{ $post->user->name }}{{ $post->author }}</h5>
+            <h5 >BY : <a class="text-decoration-none" href="/author/{{ $post->author->username }}">{{ $post->author->name }} </a> </h5>
             <p>{!! $post->excerpt !!}</p>
         </article>
     @endforeach
