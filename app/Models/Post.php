@@ -11,6 +11,8 @@ class Post extends Model
 
     //protected $fillable = ['title','excerpt','body']; // membuat hanya yg didalam array yang boleh diise
     protected $guarded = ['id']; // membuat yg didalam array tidak bisa diisi, selain itu bisa
+    protected $posts = ["author","category"];
+
 
     public function Category()
     {

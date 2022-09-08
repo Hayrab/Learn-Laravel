@@ -12,8 +12,9 @@ class PostController extends Controller
     {
         return view('blog', [
             "title" => "All Post",
+            "active" => "blog",
             //"posts" => Post::all()
-            "posts" => Post::with(["author","category"])->latest()->get()
+            "posts" => Post::latest()->get()
         ]);
     }
 
@@ -21,6 +22,7 @@ class PostController extends Controller
     {
         return view('post', [
             "title" => "single post",
+            "active" => "blog",
             "post"  => $post // tidak perlu mencari id, lansung saja post 
         ]);
     }

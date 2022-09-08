@@ -13,3 +13,4 @@
     @endforeach
 @endsection
 
+// sudah tidak berguna karena tampilan hanya dari blog

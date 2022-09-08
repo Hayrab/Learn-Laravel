@@ -40,14 +40,20 @@ class DatabaseSeeder extends Seeder
         User::factory(5)->create();
 
         Category::create([
-            'name' => 'Web',
-            'slug' => 'web'
+            'name' => 'Web Programming',
+            'slug' => 'web-programming'
 
         ]);
 
         Category::create([
-            'name' => 'Python',
-            'slug' => 'python'
+            'name' => 'Python Programming',
+            'slug' => 'python-programming'
+
+        ]);
+
+        Category::create([
+            'name' => 'Web Design',
+            'slug' => 'web-design'
 
         ]);
 
