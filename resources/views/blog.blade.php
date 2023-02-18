@@ -2,7 +2,18 @@
 
 @section('container')
 
-<h1 class="mb-5">{{ $title }}</h1>
+<h1 class="my-4 text-center">{{ $title }}</h1>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form action="/blog">
+            <div class="input-group mb-5">
+                <input type="text" class="form-control" placeholder="Search.." name="Search" value="{{ request('Search') }}">
+                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
 
 @if ($posts->count())
 
@@ -20,11 +31,7 @@
     </a>
 </div>
 
-@else
 
-<p class="text-center fs-4">No Post Found</p>
-
-@endif
 
 <div class="containter">
     <div class="row">
@@ -45,12 +52,11 @@
     </div>
 </div>
 
-    
-        {{-- <article class = "mb-5 border-bottom">
-            <h2><a href="/post/{{ $post->slug }}" class="text-decoration-none"> {{ $post->title   }}</a> </h2>
-            <h5 >BY : <a class="text-decoration-none" href="/author/{{ $post->author->username }}">{{ $post->author->name }} </a> </h5>
-            <p>{!! $post->excerpt !!}</p>
-        </article> --}}
+@else
+
+<p class="text-center fs-4">No Post Found</p>
+
+@endif
     
 @endsection
 

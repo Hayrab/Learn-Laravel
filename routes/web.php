@@ -30,7 +30,9 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about', [
         "title" => "About",
-        'active' => 'about'
+        'active' => 'about',
+        'Name' => 'Haykal Rabani',
+        'E-Mail' => 'mhaykalraban@gmail.com'
     ]);
 });
 
